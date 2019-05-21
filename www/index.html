@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover">
+    <meta name="theme-color" content="#007aff">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>Trinkspiele</title>
+    <link href="css/app.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div class="statusbar"></div>
+        <div class="panel panel-left panel-cover theme-dark">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="title">Left Panel</div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="block">Left panel content goes here</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-right panel-reveal theme-dark">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="title">Right Panel</div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="block">Right panel content goes here</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="view view-main view-init safe-areas" data-url="/"></div>
+        <div class="popup" id="my-popup">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="title">Popup</div>
+                            <div class="right"><a href="#" class="link popup-close">Close</a></div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="block">
+                            <p>Popup content goes here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="login-screen" id="my-login-screen">
+            <div class="view">
+                <div class="page">
+                    <div class="page-content login-screen-content">
+                        <div class="login-screen-title">Login</div>
+                        <div class="list">
+                            <ul>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Username</div>
+                                        <div class="item-input-wrap"><input type="text" name="username"
+                                                placeholder="Your username"></div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Password</div>
+                                        <div class="item-input-wrap"><input type="password" name="password"
+                                                placeholder="Your password"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li><a href="#" class="item-link list-button login-button">Sign In</a></li>
+                            </ul>
+                            <div class="block-footer">Some text about login information.<br>Click "Sign In" to close
+                                Login Screen</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
