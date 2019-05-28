@@ -3,4 +3,12 @@
   height: 100vh;
 }
 
+/* Custom color theme properties */
+:root {
+  --f7-theme-color: #ff5733;
+  --f7-theme-color-rgb: 255, 87, 51;
+  --f7-theme-color-shade: #ff350a;
+  --f7-theme-color-tint: #ff795c;
+}
+
 /* Your app custom styles here */

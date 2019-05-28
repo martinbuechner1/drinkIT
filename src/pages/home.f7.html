@@ -1,15 +1,17 @@
 <template>
-  <div class="page" data-name="home">
-    <!-- Top Navbar -->
+  <div id="startseite" class="page" data-name="home">
+    <link rel="stylesheet" href="path/to/framework7-icons.css">
+    <!-- Top Navbar 
     <div class="navbar">
       <div class="navbar-inner">
         <div class="left">
           <a href="#" class="link icon-only panel-open" data-panel="left">
             <i class="icon f7-icons if-not-md">menu</i>
             <i class="icon material-icons if-md">menu</i>
+            <div style="align-content: center; width: 500px">drinkIT</div>
           </a>
         </div>
-        <div class="title sliding">Trinkspiele</div>
+        <div class="title sliding">drinkIT</div>
         <div class="right">
           <a href="#" class="link icon-only panel-open" data-panel="right">
             <i class="icon f7-icons if-not-md">menu</i>
@@ -17,43 +19,72 @@
           </a>
         </div>
         <div class="title-large">
-          <div class="title-large-text">Trinkspiele</div>
-        </div>
+          <div class="title-large-text">drinkIT</div>
+        </div> 
       </div>
-    </div>
+    </div> -->
     <!-- Toolbar-->
     <div class="toolbar toolbar-bottom">
       <div class="toolbar-inner">
-        <a href="#" class="link">Left Link</a>
-        <a href="#" class="link">Right Link</a>
+        <a href="/optionen/" class="link item-content item-link">
+          <div class="item-inner">
+            <div class="item-title">
+              <i class="f7-icons">info_round</i></div>
+          </div>
+        </a>
+
+        </a>
       </div>
     </div>
     <!-- Scrollable page content-->
     <div class="page-content">
-      <div class="block block-strong">
-        <p>Here is your blank Framework7 app. Let's see what we have here.</p>
+      <h1 class="title-large-text"
+        style="color: #ff5733; text-align: center; font-family: 'Courier New', Courier, monospace; font-size: 50px; font-weight: 500">
+        drinkIT</h1>
+      <div class="text-align-center">
+        <img width="128" src="/src/static/icons/Flat-Icons.com-Flat-Beer.ico">
       </div>
 
-      <div class="block-title">Navigation</div>
+      <br>
+
+      <div class="col-100">
+        <a href="#" class="button button-raised button-fill panel-open" data-panel="left">Spieler auswählen</a>
+      </div>
+
+      <div class="block-title block-title-medium">Spiele</div>
       <div class="list">
         <ul>
           <li>
-            <a href="/about/" class="item-content item-link">
+            <a href="/piccolo/" class="item-content item-link">
               <div class="item-inner">
-                <div class="item-title">About</div>
+                <div class="item-title"><i class="f7-icons size-22">add</i>Piccolo</div>
               </div>
             </a>
           </li>
           <li>
-            <a href="/form/" class="item-content item-link">
+            <a href="/kingscup/" class="item-content item-link">
               <div class="item-inner">
-                <div class="item-title">Form</div>
+                <div class="item-title"><i class="f7-icons size-22">add</i>Kings Cup</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/busfahren/" class="item-content item-link">
+              <div class="item-inner">
+                <div class="item-title"><i class="f7-icons size-22">add</i>Busfahren</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/ichhabenochnie/" class="item-content item-link">
+              <div class="item-inner">
+                <div class="item-title"><i class="f7-icons size-22">add</i>Ich habe noch nie...</div>
               </div>
             </a>
           </li>
         </ul>
       </div>
-
+      <!--
       <div class="block-title">Modals</div>
       <div class="block block-strong">
         <div class="row">
@@ -90,10 +121,10 @@
             <a href="/request-and-load/user/123456/">Request Data & Load</a>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 <script>
-export default {}
+  export default {}
 </script>

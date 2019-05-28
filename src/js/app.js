@@ -14,8 +14,8 @@ import routes from './routes.js';
 
 var app = new Framework7({
   root: '#app', // App root element
-  id: 'io.framework7.myapp', // App bundle ID
-  name: 'Trinkspiele', // App name
+  id: 'io.framework7.drinkIT', // App bundle ID
+  name: 'drinkIT', // App name
   theme: 'auto', // Automatic theme detection
   // App root data
   data: function () {
@@ -37,11 +37,14 @@ var app = new Framework7({
   routes: routes,
 
 
-
+  // Register service worker
+  serviceWorker: Framework7.device.cordova ? {} : {
+    path: '/service-worker.js',
+  },
   // Input settings
   input: {
-    scrollIntoViewOnFocus: !!Framework7.device.cordova,
-    scrollIntoViewCentered: !!Framework7.device.cordova,
+    scrollIntoViewOnFocus: Framework7.device.cordova && !Framework7.device.electron,
+    scrollIntoViewCentered: Framework7.device.cordova && !Framework7.device.electron,
   },
   // Cordova Statusbar settings
   statusbar: {
@@ -56,6 +59,21 @@ var app = new Framework7({
         // Init cordova APIs (see cordova-app.js)
         cordovaApp.init(f7);
       }
+      this.popup.open('#warnhinweis');
+      window.addEventListener('load', function () {
+        window.history.pushState({
+          noBackExitsApp: true
+        }, '')
+      })
+
+      window.addEventListener('popstate', function (event) {
+        if (event.state && event.state.noBackExitsApp) {
+          window.history.pushState({
+            noBackExitsApp: true
+          }, '')
+        }
+      })
+
     },
   },
 });
