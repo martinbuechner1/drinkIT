@@ -27,6 +27,7 @@
   <link rel="apple-touch-icon" href="static/icons/apple-touch-icon.png">
   <link rel="icon" href="static/icons/favicon.png">
   <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="path/to/framework7-icons.css">
   <% } %>
   <!-- built styles file will be auto injected -->
 </head>
@@ -45,12 +46,13 @@
             </div>
           </div>
           <div class="page-content">
+
             <div class="list no-hairlines-md">
-              <ul>
+              <ul id="player-list">
                 <li class="item-content item-input">
                   <div class="item-inner">
                     <div class="item-input-wrap">
-                      <input type="text" placeholder="Spieler1">
+                      <input type="text" placeholder="Spieler">
                       <span class="input-clear-button"></span>
                     </div>
                   </div>
@@ -58,7 +60,7 @@
                 <li class="item-content item-input">
                   <div class="item-inner">
                     <div class="item-input-wrap">
-                      <input type="text" placeholder="Spieler2">
+                      <input type="text" placeholder="Spieler">
                       <span class="input-clear-button"></span>
                     </div>
                   </div>
@@ -66,7 +68,7 @@
                 <li class="item-content item-input">
                   <div class="item-inner">
                     <div class="item-input-wrap">
-                      <input type="text" placeholder="Spieler3">
+                      <input type="text" placeholder="Spieler">
                       <span class="input-clear-button"></span>
                     </div>
                   </div>
@@ -74,66 +76,27 @@
                 <li class="item-content item-input">
                   <div class="item-inner">
                     <div class="item-input-wrap">
-                      <input type="text" placeholder="Spieler4">
-                      <span class="input-clear-button"></span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item-inner">
-                    <div class="item-input-wrap">
-                      <input type="text" placeholder="Spieler5">
-                      <span class="input-clear-button"></span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item-inner">
-                    <div class="item-input-wrap">
-                      <input type="text" placeholder="Spieler6">
-                      <span class="input-clear-button"></span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item-inner">
-                    <div class="item-input-wrap">
-                      <input type="text" placeholder="Spieler7">
-                      <span class="input-clear-button"></span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item-inner">
-                    <div class="item-input-wrap">
-                      <input type="text" placeholder="Spieler8">
-                      <span class="input-clear-button"></span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item-inner">
-                    <div class="item-input-wrap">
-                      <input type="text" placeholder="Spieler9">
-                      <span class="input-clear-button"></span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item-inner">
-                    <div class="item-input-wrap">
-                      <input type="text" placeholder="Spieler10">
+                      <input type="text" placeholder="Spieler">
                       <span class="input-clear-button"></span>
                     </div>
                   </div>
                 </li>
               </ul>
+              <div class="row">
+                <div class="col">
+                  <button id="add-player-button" href="#" class="button"><i class="f7-icons">add_round</i></button>
+                </div>
+                <div class="col">
+                  <button id="remove-player-button" href="#" class="button"><i
+                      class="f7-icons">delete_round</i></button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Right panel with reveal effect-->
+    <!-- Right panel with reveal effect
     <div class="panel panel-right panel-reveal theme-dark">
       <div class="view">
         <div class="page">
@@ -147,7 +110,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
     <!-- Your main view, should have "view-main" class -->
     <div class="view view-main view-init safe-areas" data-url="/"></div>
@@ -176,48 +139,8 @@
               <br>
               <br>
               <br>
-              <div class="col-100">
+              <div class="col-80">
                 <button href="#" class="button button-fill popup-close">Aktzeptieren</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Login Screen -->
-    <div class="login-screen" id="my-login-screen">
-      <div class="view">
-        <div class="page">
-          <div class="page-content login-screen-content">
-            <div class="login-screen-title">Login</div>
-            <div class="list">
-              <ul>
-                <li class="item-content item-input">
-                  <div class="item-inner">
-                    <div class="item-title item-label">Username</div>
-                    <div class="item-input-wrap">
-                      <input type="text" name="username" placeholder="Your username">
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item-inner">
-                    <div class="item-title item-label">Password</div>
-                    <div class="item-input-wrap">
-                      <input type="password" name="password" placeholder="Your password">
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="list">
-              <ul>
-                <li>
-                  <a href="#" class="item-link list-button login-button">Sign In</a>
-                </li>
-              </ul>
-              <div class="block-footer">Some text about login information.<br>Click "Sign In" to close Login Screen
               </div>
             </div>
           </div>
@@ -228,6 +151,25 @@
   <% if (process.env.TARGET === 'cordova') { %>
   <script src="cordova.js"></script>
   <% } %>
+  <script>
+    document.getElementById("add-player-button").onclick = function () {
+      addPlayerFunction()
+    };
+
+    document.getElementById("remove-player-button").onclick = function () {
+      removePlayerFunction()
+    };
+
+    function addPlayerFunction() {
+      document.getElementById("player-list").innerHTML = document.getElementById("player-list").innerHTML +
+        '<li class="item-content item-input"><div class="item-inner"><div class="item-input-wrap"><input type="text" placeholder="Spieler"><span class="input-clear-button"></span></div></div></li>';
+    }
+
+    function removePlayerFunction() {
+      var select = document.getElementById("player-list");
+      select.removeChild(select.lastElementChild);
+    }
+  </script>
   <!-- built script files will be auto injected -->
 </body>
 
