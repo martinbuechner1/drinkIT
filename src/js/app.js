@@ -20,18 +20,18 @@ var app = new Framework7({
   // App root data
   data: function () {
     return {
-      user: {
-        firstName: 'John',
-        lastName: 'Doe',
-      },
+      // user: {
+      //   firstName: 'John',
+      //   lastName: 'Doe',
+      // },
 
     };
   },
   // App root methods
   methods: {
-    helloWorld: function () {
-      app.dialog.alert('Hello World!');
-    },
+    // helloWorld: function () {
+    //   app.dialog.alert('Hello World!');
+    // },
   },
   // App routes
   routes: routes,
@@ -76,16 +76,4 @@ var app = new Framework7({
 
     },
   },
-});
-
-// Login Screen Demo
-$$('#my-login-screen .login-button').on('click', function () {
-  var username = $$('#my-login-screen [name="username"]').val();
-  var password = $$('#my-login-screen [name="password"]').val();
-
-  // Close login screen
-  app.loginScreen.close('#my-login-screen');
-
-  // Alert username and password
-  app.dialog.alert('Username: ' + username + '<br>Password: ' + password);
 });
