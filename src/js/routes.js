@@ -1,7 +1,7 @@
 import HomePage from '../pages/home.f7.html';
 import PiccoloPage from '../pages/piccolo/piccolo.f7.html';
 import KingsCup from '../pages/kingscup/kingscup.f7.html';
-import Busfahren from '../pages/busfahren/busfahren.f7.html';
+import FlappyBeer from '../pages/flappy-beer/flappy-beer.f7.html';
 import IchHabeNochNie from '../pages/ichhabnochnie/ichhabenochnie.f7.html';
 import Informationen from '../pages/informationen.f7.html';
 
@@ -10,82 +10,82 @@ import Informationen from '../pages/informationen.f7.html';
 import NotFoundPage from '../pages/404.f7.html';
 
 var routes = [{
-    path: '/',
-    component: HomePage,
-  },
-  {
-    path: '/piccolo/',
-    component: PiccoloPage
-  },
-  {
-    path: '/kingscup/',
-    component: KingsCup
-  },
-  {
-    path: '/busfahren/',
-    component: Busfahren
-  },
-  {
-    path: '/ichhabenochnie/',
-    component: IchHabeNochNie
-  },
-  {
-    path: '/informationen/',
-    component: Informationen
-  },
-  // {
-  //   path: '/dynamic-route/blog/:blogId/post/:postId/',
-  //   component: DynamicRoutePage,
-  // },
-  // {
-  //   path: '/request-and-load/user/:userId/',
-  //   async: function (routeTo, routeFrom, resolve, reject) {
-  //     // Router instance
-  //     var router = this;
+        path: '/',
+        component: HomePage,
+    },
+    {
+        path: '/piccolo/',
+        component: PiccoloPage
+    },
+    {
+        path: '/kingscup/',
+        component: KingsCup
+    },
+    {
+        path: '/flappy-beer/',
+        component: FlappyBeer
+    },
+    {
+        path: '/ichhabenochnie/',
+        component: IchHabeNochNie
+    },
+    {
+        path: '/informationen/',
+        component: Informationen
+    },
+    // {
+    //   path: '/dynamic-route/blog/:blogId/post/:postId/',
+    //   component: DynamicRoutePage,
+    // },
+    // {
+    //   path: '/request-and-load/user/:userId/',
+    //   async: function (routeTo, routeFrom, resolve, reject) {
+    //     // Router instance
+    //     var router = this;
 
-  //     // App instance
-  //     var app = router.app;
+    //     // App instance
+    //     var app = router.app;
 
-  //     // Show Preloader
-  //     app.preloader.show();
+    //     // Show Preloader
+    //     app.preloader.show();
 
-  //     // User ID from request
-  //     var userId = routeTo.params.userId;
+    //     // User ID from request
+    //     var userId = routeTo.params.userId;
 
-  //     // Simulate Ajax Request
-  //     setTimeout(function () {
-  //       // We got user data from request
-  //       var user = {
-  //         firstName: 'Vladimir',
-  //         lastName: 'Kharlampidi',
-  //         about: 'Hello, i am creator of Framework7! Hope you like it!',
-  //         links: [{
-  //             title: 'Framework7 Website',
-  //             url: 'http://framework7.io',
-  //           },
-  //           {
-  //             title: 'Framework7 Forum',
-  //             url: 'http://forum.framework7.io',
-  //           },
-  //         ]
-  //       };
-  //       // Hide Preloader
-  //       app.preloader.hide();
+    //     // Simulate Ajax Request
+    //     setTimeout(function () {
+    //       // We got user data from request
+    //       var user = {
+    //         firstName: 'Vladimir',
+    //         lastName: 'Kharlampidi',
+    //         about: 'Hello, i am creator of Framework7! Hope you like it!',
+    //         links: [{
+    //             title: 'Framework7 Website',
+    //             url: 'http://framework7.io',
+    //           },
+    //           {
+    //             title: 'Framework7 Forum',
+    //             url: 'http://forum.framework7.io',
+    //           },
+    //         ]
+    //       };
+    //       // Hide Preloader
+    //       app.preloader.hide();
 
-  //       // Resolve route to load page
-  //       resolve({
-  //         component: RequestAndLoad,
-  //       }, {
-  //         context: {
-  //           user: user,
-  //         }
-  //       });
-  //     }, 1000);
-  //   },
-  // },
-  {
-    path: '(.*)',
-    component: NotFoundPage,
-  },
+    //       // Resolve route to load page
+    //       resolve({
+    //         component: RequestAndLoad,
+    //       }, {
+    //         context: {
+    //           user: user,
+    //         }
+    //       });
+    //     }, 1000);
+    //   },
+    // },
+    {
+        path: '(.*)',
+        component: NotFoundPage,
+    },
 ];
 export default routes;
