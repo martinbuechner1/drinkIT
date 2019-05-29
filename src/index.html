@@ -91,6 +91,11 @@
                       class="f7-icons">delete_round</i></button>
                 </div>
               </div>
+              <div class="row">
+                <div class="col">
+                  <button id="test-button" href="#" class="button">console.log(getplayers())</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -152,6 +157,10 @@
   <script src="cordova.js"></script>
   <% } %>
   <script>
+    document.getElementById("test-button").onclick = function () {
+      console.log(getPlayers());
+    }
+
     document.getElementById("add-player-button").onclick = function () {
       addPlayerFunction()
     };
@@ -161,13 +170,29 @@
     };
 
     function addPlayerFunction() {
-      document.getElementById("player-list").innerHTML = document.getElementById("player-list").innerHTML +
-        '<li class="item-content item-input"><div class="item-inner"><div class="item-input-wrap"><input type="text" placeholder="Spieler"><span class="input-clear-button"></span></div></div></li>';
+      var btn = document.createElement("li");
+      btn.innerHTML =
+        '<li class="item-content item-input"><div class="item-inner"><div class="item-input-wrap"><input type="text" placeholder="Spieler"><span class="input-clear-button"></span></div></div></li>'; // Insert text
+      document.getElementById("player-list").appendChild(btn);
     }
 
     function removePlayerFunction() {
       var select = document.getElementById("player-list");
       select.removeChild(select.lastElementChild);
+    }
+
+    function getPlayers() {
+      var allInputs = document.querySelectorAll("input");
+      var counter = 0;
+      var players = [];
+      allInputs.forEach(function (element) {
+        //console.log(element.value);
+        if (element.value != "") {
+          players[counter] = element.value;
+          counter++;
+        }
+      });
+      return players;
     }
   </script>
   <!-- built script files will be auto injected -->
