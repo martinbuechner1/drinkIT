@@ -47,6 +47,23 @@
           </div>
           <div class="page-content">
 
+          </br>
+            <!-- Buttons zum hinzufügen von Spielern -->
+            <div class="row">
+              <div class="col">
+                <button id="add-player-button" href="#" class="button"><i class="f7-icons">add_round</i></button>
+              </div>
+              <div class="col">
+                <button id="remove-player-button" href="#" class="button"><i class="f7-icons">delete_round</i></button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button id="test-button" href="#" class="button">Spieleranzahl: </button>
+              </div>
+            </div>
+
+            <!-- Standard Spieler Felder (4) -->
             <div class="list no-hairlines-md">
               <ul id="player-list">
                 <li class="item-content item-input">
@@ -82,20 +99,6 @@
                   </div>
                 </li>
               </ul>
-              <div class="row">
-                <div class="col">
-                  <button id="add-player-button" href="#" class="button"><i class="f7-icons">add_round</i></button>
-                </div>
-                <div class="col">
-                  <button id="remove-player-button" href="#" class="button"><i
-                      class="f7-icons">delete_round</i></button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <button id="test-button" href="#" class="button">console.log(getplayers())</button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -131,7 +134,7 @@
               <div class="title">Warnhinweis</div>
             </div>
           </div>
-          
+
           <div class="page-content">
             <div class="block">
               <p>Hiermit bestätige ich, dass ich 18 Jahre alt bin und für das Benutzen der App die volle Verantwortung
@@ -151,7 +154,7 @@
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
@@ -160,16 +163,21 @@
   <script src="cordova.js"></script>
   <% } %>
   <script>
+
+    updatePlayerCount(); //Spieleranzahl beim laden der Seite ermitteln
+
     document.getElementById("test-button").onclick = function () {
-      console.log(getPlayers());
+      //console.log(getPlayers());      
     }
 
     document.getElementById("add-player-button").onclick = function () {
-      addPlayerFunction()
+      addPlayerFunction();
+      updatePlayerCount();
     };
 
     document.getElementById("remove-player-button").onclick = function () {
-      removePlayerFunction()
+      removePlayerFunction();
+      updatePlayerCount();
     };
 
     function addPlayerFunction() {
@@ -196,6 +204,27 @@
         }
       });
       return players;
+    }
+
+    function updatePlayerCount() {
+      document.getElementById("test-button").innerText = "Spieleranzahl: " + getPlayerCount();
+    }
+
+    function getPlayerCount() {
+      var allInputs = document.querySelectorAll("input");
+      var counter = 0;
+      allInputs.forEach(function (element) {
+
+        //Wenn nur gefüllte Spielereinträge beachtet werden sollen.
+        // if (element.value != "") {
+        //   counter++;
+        // }
+
+        //Wenn nur Felder gezählt werden sollen
+        counter++;
+
+      });
+      return counter;
     }
   </script>
   <!-- built script files will be auto injected -->
