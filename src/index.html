@@ -47,7 +47,7 @@
           </div>
           <div class="page-content">
 
-          </br>
+            <br />
             <!-- Buttons zum hinzufügen von Spielern -->
             <div class="row">
               <div class="col">
@@ -188,8 +188,10 @@
     }
 
     function removePlayerFunction() {
-      var select = document.getElementById("player-list");
-      select.removeChild(select.lastElementChild);
+      if (getPlayerCount() > 2) {
+        var select = document.getElementById("player-list");
+        select.removeChild(select.lastElementChild);
+      }
     }
 
     function getPlayers() {
