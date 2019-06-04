@@ -47,6 +47,23 @@
           </div>
           <div class="page-content">
 
+            <br />
+            <!-- Buttons zum hinzufügen von Spielern -->
+            <div class="row">
+              <div class="col">
+                <button id="add-player-button" href="#" class="button"><i class="f7-icons">add_round</i></button>
+              </div>
+              <div class="col">
+                <button id="remove-player-button" href="#" class="button"><i class="f7-icons">delete_round</i></button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button id="test-button" href="#" class="button">Spieleranzahl: </button>
+              </div>
+            </div>
+
+            <!-- Standard Spieler Felder (4) -->
             <div class="list no-hairlines-md">
               <ul id="player-list">
                 <li class="item-content item-input">
@@ -82,15 +99,6 @@
                   </div>
                 </li>
               </ul>
-              <div class="row">
-                <div class="col">
-                  <button id="add-player-button" href="#" class="button"><i class="f7-icons">add_round</i></button>
-                </div>
-                <div class="col">
-                  <button id="remove-player-button" href="#" class="button"><i
-                      class="f7-icons">delete_round</i></button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -120,11 +128,13 @@
     <div class="popup" id="warnhinweis">
       <div class="view">
         <div class="page">
+
           <div class="navbar">
             <div class="navbar-inner">
               <div class="title">Warnhinweis</div>
             </div>
           </div>
+
           <div class="page-content">
             <div class="block">
               <p>Hiermit bestätige ich, dass ich 18 Jahre alt bin und für das Benutzen der App die volle Verantwortung
@@ -144,28 +154,77 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </div>
   
   <script>
+
+    updatePlayerCount(); //Spieleranzahl beim laden der Seite ermitteln
+
+    document.getElementById("test-button").onclick = function () {
+      //console.log(getPlayers());      
+    }
+
     document.getElementById("add-player-button").onclick = function () {
-      addPlayerFunction()
+      addPlayerFunction();
+      updatePlayerCount();
     };
 
     document.getElementById("remove-player-button").onclick = function () {
-      removePlayerFunction()
+      removePlayerFunction();
+      updatePlayerCount();
     };
 
     function addPlayerFunction() {
-      document.getElementById("player-list").innerHTML = document.getElementById("player-list").innerHTML +
-        '<li class="item-content item-input"><div class="item-inner"><div class="item-input-wrap"><input type="text" placeholder="Spieler"><span class="input-clear-button"></span></div></div></li>';
+      var btn = document.createElement("li");
+      btn.innerHTML =
+        '<li class="item-content item-input"><div class="item-inner"><div class="item-input-wrap"><input type="text" placeholder="Spieler"><span class="input-clear-button"></span></div></div></li>'; // Insert text
+      document.getElementById("player-list").appendChild(btn);
     }
 
     function removePlayerFunction() {
-      var select = document.getElementById("player-list");
-      select.removeChild(select.lastElementChild);
+      if (getPlayerCount() > 2) {
+        var select = document.getElementById("player-list");
+        select.removeChild(select.lastElementChild);
+      }
+    }
+
+    function getPlayers() {
+      var allInputs = document.querySelectorAll("input");
+      var counter = 0;
+      var players = [];
+      allInputs.forEach(function (element) {
+        //console.log(element.value);
+        if (element.value != "") {
+          players[counter] = element.value;
+          counter++;
+        }
+      });
+      return players;
+    }
+
+    function updatePlayerCount() {
+      document.getElementById("test-button").innerText = "Spieleranzahl: " + getPlayerCount();
+    }
+
+    function getPlayerCount() {
+      var allInputs = document.querySelectorAll("input");
+      var counter = 0;
+      allInputs.forEach(function (element) {
+
+        //Wenn nur gefüllte Spielereinträge beachtet werden sollen.
+        // if (element.value != "") {
+        //   counter++;
+        // }
+
+        //Wenn nur Felder gezählt werden sollen
+        counter++;
+
+      });
+      return counter;
     }
   </script>
   <!-- built script files will be auto injected -->
