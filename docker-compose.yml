@@ -1,0 +1,11 @@
+version: '3'
+services:
+  drinkit-dev:
+    build: .
+    ports:
+    - "8080:8080"
+    volumes:
+    - logvolume01:/app
+
+volumes:
+  logvolume01: {}

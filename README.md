@@ -67,6 +67,21 @@ There is a webpack bundler setup. It compiles and bundles all "front-end" resour
 
 Webpack has specific way of handling static assets (CSS files, images, audios). You can learn more about correct way of doing things on [official webpack documentation](https://webpack.js.org/guides/asset-management/).
 
+## Docker
+
+To build this as a docker-container, just clone this repository and run `docker build -t "ContainerName" ./`.
+
+After build has finished, run `docker run -p "PortOnHostMachine":8080/tcp "ContainerName"`.
+Now access web-interface on your desired port.
+
+For running it in backround just use commandline-parameter `-d`. (`docker run -d -p "PortOnHostMachine":8080/tcp "ContainerName"`).
+
+## Docker-Compose 
+
+For development-server just run `docker-compose up`. Using in swarm is possible, but not implemented yet.
+
+For running it in backround just use commandline-parameter `-d`. (`docker-compose up -d`).
+
 ## PWA
 
 This is a PWA. Don't forget to check what is inside of your `service-worker.js`. It is also recommended that you disable service worker (or enable "Update on reload") in browser dev tools during development.

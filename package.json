@@ -56,7 +56,7 @@
     "build-cordova-ios-prod": "cross-env TARGET=cordova cross-env NODE_ENV=production node ./build/build.js && cd cordova && cordova build ios",
     "build-cordova-android-dev": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova build android",
     "build-cordova-android-prod": "cross-env TARGET=cordova cross-env NODE_ENV=production node ./build/build.js && cd cordova && cordova build android",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0 --config ./build/webpack.config.js",
     "start": "npm run dev",
     "postinstall": "cpy './node_modules/framework7-icons/fonts/*.*' './src/fonts/'"
   },
